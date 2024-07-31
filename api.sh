@@ -29,7 +29,7 @@ case $1 in
 -test)
 shift
 param=$(jsonparam $@)
-echo "$param $apikey (${#apikey}) $apiurl"
+echo "$apikey (${#apikey}) $apiurl"
 ;;
 -history) status
 shift
