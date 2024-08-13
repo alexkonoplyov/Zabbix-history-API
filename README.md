@@ -1,4 +1,4 @@
-# ahz
+# Zabbix history by API
 Zabbix history api
 Предназачен для проверки наличия истории (history) и динамики изменений (trends) для одного или нескольких узлов.
 ## Настройка
