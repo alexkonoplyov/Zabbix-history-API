@@ -1,4 +1,5 @@
 #!/bin/bash
+# version 2024-08-13
 apikey=$(cat temp/api-key.txt)
 apiurl="http://127.0.0.1/api_jsonrpc.php"
 
