@@ -1,5 +1,5 @@
 #!/bin/bash
-apikey=$(cat temp/apikey.txt)
+apikey=$(cat temp/api-key.txt)
 apiurl="http://127.0.0.1/api_jsonrpc.php"
 
 status() {
@@ -21,7 +21,7 @@ then
 break
 else
 curl --request POST --header "Content-Type: application/json-rpc" -w "\n" --data '''{"jsonrpc":"2.0","method":"user.logout","id":1,"auth":"'${apikey}'","params":[]}''' "${apiurl}"
-cat /dev/null > temp/apikey.txt
+cat /dev/null > temp/api-key.txt
 fi
 }
 
@@ -51,7 +51,7 @@ curl --request POST -s -w "\n" --header "Content-Type: application/json-rpc" --d
 ;;
 -login) logout
 shift
-curl --request POST -s -w "\n" --header "Content-Type: application/json-rpc" --data '''{"jsonrpc":"2.0", "method":"user.login", "id":1, "params":{"user":"'${1}'","password":"'${2}'"}}''' "${apiurl}" | grep -Eo "[a-f0-9]{32}" > temp/apikey.txt 
+curl --request POST -s -w "\n" --header "Content-Type: application/json-rpc" --data '''{"jsonrpc":"2.0", "method":"user.login", "id":1, "params":{"user":"'${1}'","password":"'${2}'"}}''' "${apiurl}" | grep -Eo "[a-f0-9]{32}" > temp/api-key.txt 
 ;;
 -logout) logout
 ;;
