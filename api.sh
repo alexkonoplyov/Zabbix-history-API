@@ -13,7 +13,7 @@ fi
 }
 
 status() {
-if [ ${#apikey} -eq 0 ]
+if [ ${#apikey} -ne 32 ]
 then
 echo "Залогинься через ключ -login!"
 exit
