@@ -1,5 +1,5 @@
 #!/bin/bash
-# version 2024-08-13
+# version 2024-08-14
 apikey=$(cat temp/api-key.txt)
 apiurl=$(cat temp/api-url.txt)
 
