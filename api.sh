@@ -1,7 +1,16 @@
 #!/bin/bash
 # version 2024-08-13
 apikey=$(cat temp/api-key.txt)
-apiurl="http://127.0.0.1/api_jsonrpc.php"
+apiurl=$(cat temp/api-url.txt)
+
+install() {
+if [ ${#apiurl} -eq 0 ]
+then 
+read -e -p "Введите URL API полностью:" -i "http://127.0.0.1/api_jsonrpc.php" apiurl
+echo $apiurl > temp/api-url.txt 
+exit
+fi
+}
 
 status() {
 if [ ${#apikey} -eq 0 ]
