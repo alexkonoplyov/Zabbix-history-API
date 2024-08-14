@@ -5,17 +5,17 @@ apiurl=$(cat temp/api-url.txt)
 
 install() {
 if [ ${#apiurl} -eq 0 ]
-then 
-read -e -p "Введите URL API полностью:" -i "http://127.0.0.1/api_jsonrpc.php" apiurl
-echo $apiurl > temp/api-url.txt 
-exit
+then
+echo -n "Введите URL API полностью: "
+read apiurl
+echo $apiurl > temp/api-url.txt
 fi
 }
 
 status() {
 if [ ${#apikey} -eq 0 ]
-then 
-echo "Залогинься!"
+then
+echo "Залогинься через ключ -login!"
 exit
 fi
 }
@@ -40,6 +40,9 @@ case $1 in
 shift
 param=$(jsonparam $@)
 echo "$apikey (${#apikey}) $apiurl"
+;;
+-install) apiurl=''
+install
 ;;
 -history) status
 shift
