@@ -1,7 +1,7 @@
 # Zabbix history by API
 Zabbix history by API предназачен для проверки наличия истории (history) и динамики изменений (trends) для одного или нескольких узлов через API.
 ## Структура скрипта
-Рядом со скриптом создаётся директория temp с тремя файлами: api-key.txt, api-temp.txt и api-url.txt.
+Рядом со скриптом создаётся директория temp с тремя файлами: api-key.txt, api-tmp.txt и api-url.txt.
 ## Настройка
 Запустите скрипт с ключом **-install** и укажите путь для отправки HTTP-запросов. Например, `http://company.com/zabbix/api_jsonrpc.php`. Его можно прописать в файле api-url.txt самостоятельно.
 ## Другие ключи
